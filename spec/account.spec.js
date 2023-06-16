@@ -8,7 +8,7 @@ class MockBalance {
 
 describe('Account class tests', () => {
 
-    it('should remove 15 to the balance object when withdraw is called on the Account', () => {
+    it('should remove to the balance object when withdraw is called on the Account', () => {
         // Arrange
         const balance = new MockBalance();
         const balanceSpy = spyOn(balance, `withdraw`);
@@ -21,4 +21,18 @@ describe('Account class tests', () => {
         // Assert
         expect(balanceSpy).toHaveBeenCalledOnceWith(amountToWithdraw);
     });
+
+    it('should add to the balance object when deposit is called on the Account', () => {
+        // Arrange
+        const balance = new MockBalance();
+        const balanceSpy = spyOn(balance, `deposit`);
+        const account = new Account(balance);
+        const amountToAdd = 50;
+
+        // Act
+        account.deposit(amountToAdd);
+
+        // Assert
+        expect(balanceSpy).toHaveBeenCalledOnceWith(amountToAdd);
+    })
 });
