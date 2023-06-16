@@ -12,6 +12,10 @@ class Balance {
     withdraw(amountToWithdraw) {
         this.#balance -= amountToWithdraw;
     }
+
+    deposit(amountToDeposit) {
+        this.#balance += amountToDeposit;
+    }
 }
 
 export default Balance;
