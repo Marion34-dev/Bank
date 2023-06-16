@@ -1,4 +1,4 @@
-class BankAccount {
+class Balance {
     #balance;
 
     constructor(initialBalance = 0) {
@@ -14,4 +14,4 @@ class BankAccount {
     }
 }
 
-export default BankAccount;
+export default Balance;
