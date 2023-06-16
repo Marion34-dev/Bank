@@ -27,4 +27,18 @@ describe('Balance class tests', () => {
         // Assert
         expect(balance.getBalance()).toBe(expected);
     });
+
+    it('should add 2 to the length of transactions array when withdraw and deposit are called', () => {
+        // Arrange
+        let expected = 2;
+        let initialBalance = 50;
+        let balance = new Balance(initialBalance);
+
+        // Act
+        balance.deposit(1);
+        balance.withdraw(4);
+
+        // Assert
+        expect(balance.getTransactions()).toHaveSize(expected);
+    });
 });
