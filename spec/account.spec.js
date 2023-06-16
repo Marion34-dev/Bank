@@ -36,4 +36,17 @@ describe('Account class tests', () => {
         // Assert
         expect(balanceSpy).toHaveBeenCalledOnceWith(amountToAdd);
     });
+
+    it('should return the balance when getBalance is called on the Account', () => {
+        // Arrange
+        const balance = new MockBalance();
+        const balanceSpy = spyOn(balance, `getBalance`);
+        const account = new Account(balance);
+
+        // Act
+        account.getBalance();
+
+        // Assert
+        expect(balanceSpy).toHaveBeenCalledTimes(1);
+    })
 });
