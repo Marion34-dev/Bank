@@ -1,3 +1,5 @@
+import Account from '../src/Account.js';
+
 class MockBalance {
     withdraw = amount => { };
     getBalance = () => 30;
