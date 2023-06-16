@@ -3,6 +3,7 @@ import Account from '../src/Account.js';
 class MockBalance {
     withdraw = amount => { };
     getBalance = () => 30;
+    deposit = amount => { };
 }
 
 
@@ -34,5 +35,5 @@ describe('Account class tests', () => {
 
         // Assert
         expect(balanceSpy).toHaveBeenCalledOnceWith(amountToAdd);
-    })
+    });
 });

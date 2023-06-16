@@ -12,6 +12,10 @@ class Account {
     withdraw(amountToWithdraw) {
         return this.#Accountbalance.withdraw(amountToWithdraw);
     }
+
+    deposit(amountToAdd) {
+        return this.#Accountbalance.deposit(amountToAdd);
+    }
 }
 
 export default Account;
