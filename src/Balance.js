@@ -13,8 +13,10 @@ class Balance {
         this.#balance -= amountToWithdraw;
     }
 
-    deposit(amountToDeposit) {
-        this.#balance += amountToDeposit;
+    deposit(date = "", amount = 0) {
+        this.#balance += amount;
+        console.log(`${date} || ${amount.toFixed(2)} ||        || ${this.#balance.toFixed(2)}`);
+        return `${date} || ${amount.toFixed(2)} ||         || ${this.#balance.toFixed(2)}`;
     }
 }
 

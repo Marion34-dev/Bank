@@ -22,7 +22,7 @@ describe('Balance class tests', () => {
         let balance = new Balance(initialBalance);
 
         // Act
-        balance.deposit(10);
+        balance.deposit("10/01/2012", 10);
 
         // Assert
         expect(balance.getBalance()).toBe(expected);
@@ -32,12 +32,13 @@ describe('Balance class tests', () => {
         // Arrange
         let transaction;
         transaction = new Balance();
+        const expected = JSON.stringify(`10/01/2012 || 1000.00 ||        || 1000.00`)
 
         //Act
-        transaction.deposit("10/01/2012", 1000.00);
-
+        const actual = JSON.stringify(transaction.deposit("10/01/2012", 1000.00));
+        console.log(expected);
         // Assert
-        expect(transaction).toBe("10/01/2012 || 1000.00 ||        || 1000.00");
+        expect(actual).toMatch(expected);
 
     });
 });
