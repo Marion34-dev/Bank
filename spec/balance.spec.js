@@ -36,7 +36,21 @@ describe('Balance class tests', () => {
 
         //Act
         const actual = JSON.stringify(transaction.deposit("10/01/2012", 1000.00));
-        console.log(expected);
+
+        // Assert
+        expect(actual).toMatch(expected);
+
+    });
+
+    it('should return all the details of the withdrawal', () => {
+        // Arrange
+        let transaction;
+        transaction = new Balance();
+        const expected = JSON.stringify(`14/01/2012 ||        || 500.00 || 500.00`)
+
+        //Act
+        const actual = JSON.stringify(transaction.withdraw("14/01/2012", 500.00));
+
         // Assert
         expect(actual).toMatch(expected);
 
