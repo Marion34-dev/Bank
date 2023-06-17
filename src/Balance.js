@@ -9,13 +9,14 @@ class Balance {
         return this.#balance;
     }
 
-    withdraw(amountToWithdraw) {
-        this.#balance -= amountToWithdraw;
+    withdraw(date = "", amount = 0) {
+        this.#balance -= amount;
+        return `${date} ||        || ${amount.toFixed(2)} || ${this.#balance.toFixed(2)}`;
     }
 
     deposit(date = "", amount = 0) {
         this.#balance += amount;
-        console.log(`${date} || ${amount.toFixed(2)} ||        || ${this.#balance.toFixed(2)}`);
+        //  console.log(`${date} || ${amount.toFixed(2)} ||        || ${this.#balance.toFixed(2)}`);
         return `${date} || ${amount.toFixed(2)} ||         || ${this.#balance.toFixed(2)}`;
     }
 }

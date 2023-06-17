@@ -9,7 +9,7 @@ describe('Balance class tests', () => {
         let balance = new Balance(initialBalance);
 
         // Act
-        balance.withdraw(10);
+        balance.withdraw("10/01/2012", 10);
 
         // Assert
         expect(balance.getBalance()).toBe(expected);
