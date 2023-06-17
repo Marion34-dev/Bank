@@ -67,8 +67,8 @@ describe('Balance class tests', () => {
         //Act
         transaction.deposit("10/01/2012", 1000.00);
         transaction.deposit("13/01/2012", 2000.00);
-        transaction.withdrawal("14/01/2012", 500.00);
-        const actual = balance.printStatement();
+        transaction.withdraw("14/01/2012", 500.00);
+        const actual = transaction.printStatement();
 
         // Assert
         expect(actual).toMatch(expected);
