@@ -1,6 +1,6 @@
-import Balance from '../src/Balance.js';
+import Account from './Account.js';
 
-const account = new Balance();
+const account = new Account();
 
 account.deposit("10/01/2012", 1000.00);
 account.deposit("13/01/2012", 2000.00);
