@@ -28,17 +28,16 @@ describe('Balance class tests', () => {
         expect(balance.getBalance()).toBe(expected);
     });
 
-    it('should add 2 to the length of transactions array when withdraw and deposit are called', () => {
+    it('should return all the details of the deposit', () => {
         // Arrange
-        let expected = 2;
-        let initialBalance = 50;
-        let balance = new Balance(initialBalance);
+        let transaction;
+        transaction = new Balance();
 
-        // Act
-        balance.deposit(1);
-        balance.withdraw(4);
+        //Act
+        transaction.deposit("10/01/2012", 1000.00);
 
         // Assert
-        expect(balance.getTransactions()).toHaveSize(expected);
+        expect(transaction).toBe("10/01/2012 || 1000.00 ||        || 1000.00");
+
     });
 });
