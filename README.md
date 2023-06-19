@@ -1,17 +1,20 @@
-# Bank
+# Welcome to the Bank Challenge!
+ 
+This Javascript program aims at mirroring the functionalities of a bank account. <br>
+It is built with an object-oriented design and was developed in a test driven development fashion. Please note this program runs entirely on the terminal, the data is stored in memory and there is no need for any user input at this stage. 
 
-This challenge helps you practice your OO design skills.
+The program enables deposit and withdrawal operations, therefore allowing the addion and subtraction of funds from the account.
+An account statement can be printed, which includes the date of the transactions, the amounts credited or debited, and the updated account balance.
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
-
-## Specification
-
-### Requirements
-
-* Results of your code should display via the JavaScript console.  (NB: You don't need to implement a command line interface that takes user input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, credit or debit amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+                                  ___________________________________
+                                  |#######====================#######|
+                                  |#(1)*UNITED STATES OF AMERICA*(1)#|
+                                  |#**          /===\   ********  **#|
+                                  |*# {G}      | (") |             #*|
+                                  |#*  ******  | /v\ |    O N E    *#|
+                                  |#(1)         \===/            (1)#|
+                                  |##=========ONE DOLLAR===========##|
+                                  ------------------------------------
 
 ### Acceptance criteria
 
@@ -19,7 +22,7 @@ You'll work alone, and you'll also review your own code so you can practice refl
 **And** a deposit of 2000 on 13-01-2012  
 **And** a withdrawal of 500 on 14-01-2012  
 **When** she prints her bank statement  
-**Then** she would see
+**Then** she would see:
 
 ```
 date       || credit  || debit  || balance
@@ -28,16 +31,54 @@ date       || credit  || debit  || balance
 10/01/2012 || 1000.00 ||        || 1000.00
 ```
 
+### How to use
+In order to run this program, please clone the repository to your local machine. 
+Make sure you have Jasmine installed (or insert `npm install --save-dev jasmine` in the terminal), and type `npm test` in the terminal to run the spec file, which will test the production code.
 
-#### Standard
-- [ ] Meets the spec
-- [ ] Developed test-first
-- [ ] Passes tests and code is clean and well formatted
-- [ ] Encapsulates adding and storing Transactions in a class
-- [ ] Encapsulates Statement formatting in a class
-- [ ] Encapsulates Transaction data in a class
+### User stories and domain models
 
-#### Extended
-- [ ] Can you format the console output?  Credited values should be GREEN and debited values should be RED.  The balance should be GREEN if positive and RED if negative
+* First user story: <br>
+As a user<br>
+I want to withdraw money<br>
+So that I can pay for things
 
-You may find this link useful [Output to the command line using NodeJS](https://nodejs.dev/en/learn/output-to-the-command-line-using-nodejs/) - check the formatting section (and this links out to a GitHub doc on the [ANSI color codes](https://gist.github.com/iamnewton/8754917))
+```
+Objects		    Properties		    Messages		         Output
+BankAccount	    balance@number	    withdraw()    		@Void
+                    transactions@array
+```
+
+Test 1: Testing that the user can take money out of their bank account using withdraw()
+Expecting balance to have reduced by 10
+
+* Second user story: <br>
+As a user<br>
+I want to deposit a certain amount of money<br>
+So that I store it safely in my bank account
+
+```
+Objects		    Properties		    Messages		         Output
+BankAccount	    balance@number	    deposit()    		@Void
+                    transactions@array
+```
+
+Test 2: Testing that the user can add money into their bank account using deposit()
+
+* Third user story:<br>
+As a user<br>
+I want to be able to view my bank statement<br>
+So that I can check the dates and amounts of my transactions as well as the remaining balance
+
+```
+Objects		    Properties		    Messages		          Output
+BankAccount	    balance@number	    printStatement()    	  @String
+                    transactions@array
+```
+
+Test 3: Testing that printStatement() is aligned with the following formatting and returns: 
+```
+date       || credit  || debit  || balance
+14/01/2012 ||         || 500.00 || 2500.00
+13/01/2012 || 2000.00 ||        || 3000.00
+10/01/2012 || 1000.00 ||        || 1000.00
+``` 
