@@ -1,8 +1,8 @@
 import Account from '../src/Account.js';
 
-describe('Account class tests', () => {
+describe('All account class tests', () => {
 
-    it('should remove 10 from the balance when withdraw is called', () => {
+    it('should remove 10 from the balance variable when withdraw() is called', () => {
         // Arrange
         let initialBalance = 15;
         let expected = 5;
@@ -15,7 +15,7 @@ describe('Account class tests', () => {
         expect(account.getBalance()).toBe(expected);
     });
 
-    it('should add 10 to the balance when deposit is called', () => {
+    it('should add 10 to the balance variable when deposit() is called', () => {
         // Arrange
         let initialBalance = 0;
         let expected = 10;
@@ -28,7 +28,7 @@ describe('Account class tests', () => {
         expect(account.getBalance()).toBe(expected);
     });
 
-    it('should return all the details of the deposit', () => {
+    it('should return all the details (date, amount, remaining balance) when a deposit is made', () => {
         // Arrange
         let transaction;
         transaction = new Account();
@@ -42,7 +42,7 @@ describe('Account class tests', () => {
 
     });
 
-    it('should return all the details of the withdrawal', () => {
+    it('should return all the details (date, amount, remaining balance) when a withdrawal is made', () => {
         // Arrange
         let transaction;
         transaction = new Account();
@@ -56,7 +56,7 @@ describe('Account class tests', () => {
 
     });
 
-    it('should return all the details of the transactions when printStatement() is called', () => {
+    it('should return all the details (date, amount, remaining balance) of the transactions (1 withdrawal and 2 deposits) when printStatement() is called', () => {
         // Arrange
         let transaction;
         transaction = new Account();
