@@ -1,3 +1,5 @@
+import Transaction from '../src/Transaction.js';
+
 describe('Testing the transaction class', () => {
 
     it('Test 1: testing that the getDebitAmount method is triggered when using it', () => {
@@ -22,12 +24,7 @@ describe('Testing the transaction class', () => {
         const credit = 0;
         const transaction2 = new Transaction(date, debit, credit);
 
-        // Act
-        actual = transaction2.date;
-
-        // Assert
-        expect(actual).toEqual(String);
-
+        // Act & Assert
+        expect(transaction2.getDate()).toBeInstanceOf(String);
     });
-
 });
