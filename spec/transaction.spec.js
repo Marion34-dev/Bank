@@ -2,7 +2,7 @@ import Transaction from '../src/Transaction.js';
 
 describe('Testing the transaction class', () => {
 
-    it('Test 1: testing that the getDebitAmount method is triggered when using it', () => {
+    it('Test 3: testing that the getDebitAmount method is triggered when using it', () => {
         // Arrange
         const date = "04/07/2023";
         const debit = 400;
@@ -17,7 +17,7 @@ describe('Testing the transaction class', () => {
         expect(debitSpy).toHaveBeenCalled();
     });
 
-    it('Test 2: testing that the date getter returns a string date', () => {
+    it('Test 4: testing that the date getter returns a string date', () => {
         // Arrange
         const date = "04/07/2023";
         const debit = 400;

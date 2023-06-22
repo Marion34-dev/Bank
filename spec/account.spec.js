@@ -42,11 +42,11 @@ describe('Testing the Account class', () => {
 
     it('Test 2: it should add 1 to the length of the transactions array', () => {
         // Arrange
-        const MockTransaction2 = new MockTransaction("04/07/1990", 300, 0)
+        const MockTransaction2 = new MockTransaction("04/07/1990", 0, 40)
         const account2 = new Account();
 
         // Act
-        account2.deposit(MockTransaction2);
+        account2.withdraw(MockTransaction2);
 
         // Assert
         expect(account2.getTransactions().length).toBe(1);

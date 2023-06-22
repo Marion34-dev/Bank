@@ -2,7 +2,7 @@ import Statement from "../src/Statement.js";
 
 describe('Testing the Statement class:', () => {
 
-    it('Test 1: the printStatement static method should have been called once ', () => {
+    it('Test 5: the printStatement static method should have been called once ', () => {
         // Arrange
         const printingSpy = spyOn(Statement, `printStatement`);
 
