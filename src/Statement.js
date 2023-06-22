@@ -12,9 +12,13 @@ class Statement {
             let balance = trans[3];
 
             if (credit != 0) {
-                console.log(`${date} || ${chalk.greenBright(credit.toFixed(2))} ||        || ${chalk.yellowBright(balance.toFixed(2))}`);
+                const formattedCredit = chalk.green(credit.toFixed(2));
+                const formattedBalance = balance >= 0 ? chalk.green(balance.toFixed(2)) : chalk.red(balance.toFixed(2));
+                console.log(`${date} || ${formattedCredit} ||        || ${formattedBalance}`);
             } else if (debit != 0) {
-                console.log(`${date} ||         || ${chalk.redBright(debit.toFixed(2))} || ${chalk.yellowBright(balance.toFixed(2))}`);
+                const formattedDebit = chalk.red(debit.toFixed(2));
+                const formattedBalance = balance >= 0 ? chalk.green(balance.toFixed(2)) : chalk.red(balance.toFixed(2));
+                console.log(`${date} ||         || ${formattedDebit} || ${formattedBalance}`);
             }
         });
     }
