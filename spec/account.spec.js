@@ -1,76 +1,55 @@
 import Account from '../src/Account.js';
 
-describe('All account class tests', () => {
+class MockTransaction {
+    date;
+    credit;
+    debit;
 
-    it('should remove 10 from the balance variable when withdraw() is called', () => {
+    constructor(date = "", credit = 0, debit = 0) {
+        this.date = date;
+        this.credit = credit;
+        this.debit = debit;
+    }
+
+    getTheDate() {
+        return this.date;
+    };
+
+    getDebitAmount() {
+        return this.debit;
+    };
+
+    getCreditAmount() {
+        return this.credit;
+    };
+}
+
+
+describe('Testing the Account class', () => {
+
+    it('Test 1: it should add 300 to the balance of the account', () => {
         // Arrange
-        let initialBalance = 15;
-        let expected = 5;
-        let account = new Account(initialBalance);
+
+        const MockTransaction1 = new MockTransaction("04/07/1990", 300, 0);
+        const account1 = new Account();
 
         // Act
-        account.withdraw("10/01/2012", 10);
+        account1.deposit(MockTransaction1);
 
         // Assert
-        expect(account.getBalance()).toBe(expected);
+        expect(account1.getBalance()).toEqual(300);
     });
 
-    it('should add 10 to the balance variable when deposit() is called', () => {
+    it('Test 2: it should add 1 to the length of the transactions array', () => {
         // Arrange
-        let initialBalance = 0;
-        let expected = 10;
-        let account = new Account(initialBalance);
+        const MockTransaction2 = new MockTransaction("04/07/1990", 300, 0)
+        const account2 = new Account();
 
         // Act
-        account.deposit("10/01/2012", 10);
+        account2.deposit(MockTransaction2);
 
         // Assert
-        expect(account.getBalance()).toBe(expected);
-    });
+        expect(account2.getTransactions().length).toBe(1);
 
-    it('should return all the details (date, amount, remaining balance) when a deposit is made', () => {
-        // Arrange
-        let transaction;
-        transaction = new Account();
-        const expected = JSON.stringify(`10/01/2012 || 1000.00 ||        || 1000.00`)
-
-        //Act
-        const actual = JSON.stringify(transaction.deposit("10/01/2012", 1000.00));
-
-        // Assert
-        expect(actual).toMatch(expected);
-
-    });
-
-    it('should return all the details (date, amount, remaining balance) when a withdrawal is made', () => {
-        // Arrange
-        let transaction;
-        transaction = new Account();
-        const expected = JSON.stringify(`14/01/2012 ||        || 500.00 || 500.00`)
-
-        //Act
-        const actual = JSON.stringify(transaction.withdraw("14/01/2012", 500.00));
-
-        // Assert
-        expect(actual).toMatch(expected);
-
-    });
-
-    it('should return all the details (date, amount, remaining balance) of the transactions (1 withdrawal and 2 deposits) when printStatement() is called', () => {
-        // Arrange
-        let transaction;
-        transaction = new Account();
-        const expected = JSON.stringify(`14/01/2012 ||         || 500.00 || 2500.00
-        13/01/2012 || 2000.00 ||        || 3000.00
-        10/01/2012 || 1000.00 ||        || 1000.00`)
-
-        //Act
-        transaction.deposit("10/01/2012", 1000.00);
-        transaction.deposit("13/01/2012", 2000.00);
-        transaction.withdraw("14/01/2012", 500.00);
-        const actual = transaction.printStatement();
-
-        // Assert
-        expect(actual).toMatch(expected);
-    });
-});
+    })
+})
