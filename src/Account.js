@@ -1,34 +1,38 @@
 class Account {
     #balance;
-    #transactions = [];
+    #transactions;
 
-    constructor(initialBalance = 0) {
+    constructor(initialBalance = 0, transaction = []) {
         this.#balance = initialBalance;
-    }
+        this.#transactions = transaction;
+    };
 
     getBalance() {
         return this.#balance;
-    }
+    };
 
-    withdraw(date = "", amount = 0) {
-        this.#balance -= amount;
-        this.#transactions.push(`${date} ||         || ${amount.toFixed(2)} || ${this.#balance.toFixed(2)}`);
-        //     return `${date} ||         || ${amount.toFixed(2)} || ${this.#balance.toFixed(2)}`;
+    getTransactions() {
+        return this.#transactions;
+    };
 
-    }
+    withdraw(transactions) {
+        const date = getTheDate();
+        const credit = getCreditAmount();
+        const debit = getDebitAmount();
+        const currentTrans = [date, credit, debit, this.#balance];
+        this.#balance -= debit;
+        return this.#transactions.push(currentTrans);
+    };
 
-    deposit(date = "", amount = 0) {
-        this.#balance += amount;
-        this.#transactions.push(`${date} || ${amount.toFixed(2)} ||        || ${this.#balance.toFixed(2)}`);
-        //     return `${date} || ${amount.toFixed(2)} ||        || ${this.#balance.toFixed(2)}`;
-    }
+    deposit(transactions) {
+        const date = getTheDate();
+        const credit = getCreditAmount();
+        const debit = getDebitAmount();
+        const currentTrans = [date, credit, debit, this.#balance];
+        this.#balance += credit;
+        return this.#transactions.push(currentTrans);
+    };
 
-    printStatement() {
-        console.log(`date       || credit  || debit  || balance`)
-        this.#transactions.reverse().forEach(transaction => {
-            console.log(transaction);
-        });
-    }
 }
 
 export default Account;
