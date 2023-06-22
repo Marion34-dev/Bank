@@ -54,8 +54,20 @@ Transaction   date@String
               debitAmount@Integer
 ```
 
-Test 1: Testing that the user can take money out of their bank account using deposit() in the Account class <br>
+Test 1: Testing that the user can add money into their bank account using deposit() in the Account class <br>
 Expecting balance to have increased by 300.
+
+Test 5: Testing that the getCreditAmount() method is triggered when called in the Transaction class <br>
+Expecting it to have been called once.
+
+Test 7: Testing that the getCreditAmount() method returns the right amount <br>
+Expecting it to return 200.
+
+Test 8: Testing that the date getter returns a string <br>
+Expecting it to the case.
+
+Test 9: Testing that the date getter returns the right value <br>
+Expecting it to return "04/07"2023".
 
 * Second user story: <br>
 As a user<br>
@@ -71,11 +83,17 @@ Transaction   date@String
               debitAmount@Integer
 ```
 
-Test 2: Testing that the transaction is being stored in the transactions array using withdraw() in Account class <br>
-Expecting the length of the array to have increased by one
+Test 2: Testing that the user can take money out of their bank account using withdraw() in the Account class <br>
+Expecting balance to have decreased by 50.
 
-[NB: I have run 2 tests on the Transaction class for practice, but they are all getters]
+Test 3: Testing that the transactions are being stored in the transactions array using both deposit() withdraw() in Account class <br>
+Expecting the length of the array to have increased by two.
 
+Test 4: Testing that the getDebitAmount() method is triggered when called in the Transaction class <br>
+Expecting it to have been called once.
+
+Test 6: Testing that the getDebitAmount() method returns the right amount <br>
+Expecting it to return 20.
 
 * Third user story:<br>
 As a user<br>
@@ -87,5 +105,9 @@ Objects		    Properties		    Messages		         Output
 Statement           transactions           printStatement()             @String
 ```
 
-Test 5: Testing that the printStatement() method is being called <br>
+Test 10: Testing that the printStatement() static method is being called <br>
 Expecting it to have been called once
+
+Test 11: Testing that the printStatement() static method should print the statement <br>
+Expecting the header to have been logged on the console
+
