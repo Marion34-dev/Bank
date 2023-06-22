@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^5.0.1"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0"
   }
 }
