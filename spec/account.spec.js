@@ -11,7 +11,7 @@ class MockTransaction {
         this.debit = debit;
     }
 
-    getTheDate() {
+    getDate() {
         return this.date;
     };
 
