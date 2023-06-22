@@ -1,11 +1,11 @@
-const chalk = import("chalk");
+import chalk from 'chalk';
 
 class Statement {
 
-    static printStatement(transactions) {
+    static printStatement(transactions = []) {
         console.log("date       || credit  || debit  || balance");
 
-        transactions.forEach(trans => {
+        transactions.reverse().forEach(trans => {
             let date = trans[0];
             let credit = trans[1];
             let debit = trans[2];

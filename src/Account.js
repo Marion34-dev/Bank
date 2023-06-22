@@ -19,8 +19,8 @@ class Account {
         const date = transactions.getDate();
         const credit = transactions.getCreditAmount();
         const debit = transactions.getDebitAmount();
-        const currentTrans = [date, credit, debit, this.#balance];
         this.#balance -= debit;
+        const currentTrans = [date, credit, debit, this.#balance];
         return this.#transactions.push(currentTrans);
     };
 
@@ -28,8 +28,8 @@ class Account {
         const date = transactions.getDate();
         const credit = transactions.getCreditAmount();
         const debit = transactions.getDebitAmount();
-        const currentTrans = [date, credit, debit, this.#balance];
         this.#balance += credit;
+        const currentTrans = [date, credit, debit, this.#balance];
         return this.#transactions.push(currentTrans);
     };
 }
