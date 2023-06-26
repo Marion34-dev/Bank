@@ -111,3 +111,7 @@ Expecting it to have been called once
 Test 11: Testing that the printStatement() static method should print the statement <br>
 Expecting the header to have been logged on the console
 
+Test 12: Testing that the printStatement() static method should log the details of the deposit <br>
+Expecting the details of the deposit to have been logged on the console
+
+
