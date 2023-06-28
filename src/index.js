@@ -11,4 +11,5 @@ const transaction3 = new Transaction("14/01/2012", 0, 500);
 account.deposit(transaction1);
 account.deposit(transaction2);
 account.withdraw(transaction3);
+
 Statement.printStatement(account.getTransactions());

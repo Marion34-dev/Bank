@@ -9,7 +9,7 @@ class Statement {
 
             console.log(`${date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`);
         });
-    }
-}
+    };
+};
 
 export default Statement;
