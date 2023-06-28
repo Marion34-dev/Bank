@@ -1,6 +1,7 @@
 import Transaction from '../src/Transaction.js';
 
 describe('Testing the transaction class', () => {
+
     let expected;
     let transaction1;
     let transaction2;
@@ -23,6 +24,7 @@ describe('Testing the transaction class', () => {
         actual = undefined;
         transactionSpy = undefined;
     });
+
 
     it('Test 4: testing that the getDebitAmount method is triggered when called in the Transaction class', () => {
         // Arrange
