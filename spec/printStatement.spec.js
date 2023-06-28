@@ -52,13 +52,14 @@ class MockTransaction {
     };
 }
 
-let expected;
-let printingSpy;
-let account1;
-let MockTransaction1;
-let MockTransaction2;
-
 describe('Testing the Statement class:', () => {
+
+    let expected;
+    let printingSpy;
+    let account1;
+    let MockTransaction1;
+    let MockTransaction2;
+
     beforeEach(() => {
         MockTransaction1 = new MockTransaction("04/07/1990", 300, 0);
         MockTransaction2 = new MockTransaction("04/07/2023", 0, 50);
@@ -77,24 +78,26 @@ describe('Testing the Statement class:', () => {
     it('Test 10: the printStatement static method should have been called once', () => {
         // Arrange
         printingSpy = spyOn(Statement, `printStatement`);
+        expected = 1;
 
         // Act
         Statement.printStatement();
 
         // Assert
-        expect(printingSpy).toHaveBeenCalledTimes(1);
+        expect(printingSpy).toHaveBeenCalledTimes(expected);
     });
 
 
     it('Test 11: the printStatement static method should log the statement (testing the header) to the console', () => {
         // Arrange
         printingSpy = spyOn(global.console, `log`);
+        expected = 'date       || credit  || debit  || balance';
 
         // Act
         Statement.printStatement();
 
         // Assert
-        expect(printingSpy).toHaveBeenCalledWith('date       || credit  || debit  || balance');
+        expect(printingSpy).toHaveBeenCalledWith(expected);
     });
 
 
