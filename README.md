@@ -36,8 +36,6 @@ In order to run this program, please clone the repository to your local machine.
 Make sure you have Jasmine installed (or insert `npm install --save-dev jasmine` in the terminal), select the package.json file, click right to open the integrated terminal and type `npm test` in the terminal to run the spec files, which will test the production code.<br>
 To run the code, please use the index.js file. 
 
-Please also make sure you have `chalk` installed (if not, you can install it by entering `npm install chalk` in your terminal).
-
 ### User stories and domain models
 
 * First user story: <br>
@@ -106,8 +104,13 @@ Statement           transactions           printStatement()             @String
 ```
 
 Test 10: Testing that the printStatement() static method is being called <br>
-Expecting it to have been called once
+Expecting it to have been called once.
 
 Test 11: Testing that the printStatement() static method should print the statement <br>
-Expecting the header to have been logged on the console
+Expecting the header to have been logged on the console.
 
+Test 12: Testing that the printStatement() static method should log the details of the deposit <br>
+Expecting the details of the deposit to have been logged on the console.
+
+Test 13: Testing that the printStatement() static method should log the details of the withdrawal <br>
+Expecting the details of the withdrawal to have been logged on the console.
