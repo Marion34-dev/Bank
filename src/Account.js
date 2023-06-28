@@ -16,18 +16,14 @@ class Account {
     };
 
     withdraw(transactions) {
-        const date = transactions.getDate();
-        const credit = transactions.getCreditAmount();
-        const debit = transactions.getDebitAmount();
+        const { date = transactions.getDate(), credit = transactions.getCreditAmount(), debit = transactions.getDebitAmount() } = transactions;
         this.#balance -= debit;
         const currentTrans = [date, credit, debit, this.#balance];
         return this.#transactions.push(currentTrans);
     };
 
     deposit(transactions) {
-        const date = transactions.getDate();
-        const credit = transactions.getCreditAmount();
-        const debit = transactions.getDebitAmount();
+        const { date = transactions.getDate(), credit = transactions.getCreditAmount(), debit = transactions.getDebitAmount() } = transactions;
         this.#balance += credit;
         const currentTrans = [date, credit, debit, this.#balance];
         return this.#transactions.push(currentTrans);
